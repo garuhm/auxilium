@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>auxilium – Volunteer Dashboard</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:"Segoe UI",sans-serif}
+body{
+    min-height:100vh;
+    background:linear-gradient(135deg,#ffd6e8,#d6e4ff,#d6fff2);
+    background-size:300% 300%;
+    animation:gradientShift 12s ease infinite;
+    display:flex;
+    flex-direction:column;
+    color:#333;
+}
+@keyframes gradientShift{
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+
+/* Top Navbar */
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 40px;
+}
+.logo{
+    font-size:22px;
+    font-weight:700;
+    letter-spacing:1px;
+}
+.nav-links a{
+    text-decoration:none;
+    color:#333;
+    font-weight:500;
+}
+
+/* Layout */
+.layout{
+    display:flex;
+    flex:1;
+}
+
+/* Sidebar */
+.sidebar{
+    width:220px;
+    padding:30px 20px;
+    background:rgba(255,255,255,0.7);
+    backdrop-filter:blur(10px);
+    border-right:1px solid rgba(0,0,0,0.05);
+}
+.sidebar h3{
+    font-size:14px;
+    margin-bottom:20px;
+    opacity:0.6;
+    text-transform:uppercase;
+}
+.side-tab{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:10px 14px;
+    border-radius:20px;
+    margin-bottom:10px;
+    cursor:pointer;
+    font-size:14px;
+    transition:background 0.2s ease;
+}
+.side-tab:hover{
+    background:rgba(0,0,0,0.05);
+}
+.side-tab.active{
+    background:white;
+    box-shadow:0 5px 15px rgba(0,0,0,0.08);
+    font-weight:600;
+}
+.badge{
+    background:#ff8ecf;
+    color:white;
+    font-size:14px;
+    padding:3px 9px 4px;
+    border-radius:20px;
+}
+
+/* Dashboard Area */
+.dashboard{
+    flex:1;
+    padding:30px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+}
+.card{
+    background:white;
+    padding:25px;
+    border-radius:25px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.08);
+}
+.card h3{
+    margin-bottom:15px;
+}
+.subheader{
+    font-size:13px;
+    color:rgba(60,60,60,0.65);
+    margin-bottom:15px;
+}
+.profile-brief{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+.avatar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    color: white;
+    width:60px;
+    height:60px;
+    border-radius:50%;
+    background:linear-gradient(135deg,#ff8ecf,#8ea8ff);
+}
+.stat{
+    font-size:22px;
+    font-weight:700;
+    margin-top:10px;
+}
+.list-item{
+    padding:10px 0;
+    border-bottom:1px solid rgba(0,0,0,0.05);
+    font-size:14px;
+}
+.list-item:last-child{border-bottom:none}
+.jump-btn{
+    display:inline-block;
+    margin-top:8px;
+    padding:6px 14px;
+    border:none;
+    border-radius:20px;
+    background:linear-gradient(135deg,#ff8ecf,#8ea8ff);
+    color:white;
+    font-size:12px;
+    cursor:pointer;
+    text-decoration:none;
+}
+.notification-dot{
+    width:8px;
+    height:8px;
+    background:#ff4d6d;
+    border-radius:50%;
+    margin-left:8px;
+}
+footer{
+    text-align:center;
+    padding:20px;
+    font-size:14px;
+    opacity:0.7;
+}
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="logo">auxilium – volunteers</div>
+    <div class="nav-links">
+        <a href="/">Main Website</a>
+    </div>
+</nav>
+
+<div class="layout">
+
+    <aside class="sidebar">
+        <h3>Dashboard</h3>
+        <div class="side-tab active">Home</div>
+        <div class="side-tab">
+            My Mentees<span class="badge">3</span>
+        </div>
+        <div class="side-tab">
+            My Profile
+        </div>
+        <div class="side-tab">
+            Settings
+            <span class="notification-dot"></span>
+        </div>
+    </aside>
+
+    <main class="dashboard">
+
+        <div class="card">
+            <h3>Your Profile</h3>
+            <div class="profile-brief">
+                <div class="avatar">A</div>
+                <div>
+                    <strong>Alex Martinez</strong>
+                    <p>Volunteer</p>
+                </div>
+            </div>
+            <div class="stat">42 hrs</div>
+            <p>Total Hours Volunteered</p>
+        </div>
+
+        <div class="card">
+            <h3>Available Chats     <span class="badge">3</span></h3>
+            <p class="subheader">Teens currently waiting for a volunteer</p>
+            <div class="list-item">Chat 736<br><a href="volunteer-mockup-2.html" class="jump-btn">Join Chat</a></div>
+            <div class="list-item">Chat 737<br><a href="volunteer-mockup-2.html" class="jump-btn">Join Chat</a></div>
+            <div class="list-item">Chat 739<br><a href="volunteer-mockup-2.html" class="jump-btn">Join Chat</a></div>
+        </div>
+
+        <div class="card">
+            <h3>Recent Chats</h3>
+            <div class="list-item">Chat 508 — 1 hr session<br><a href="volunteer-mockup-2.html" class="jump-btn">Open Chat</a></div>
+            <div class="list-item">Chat 452 — 30 min session<br><a href="volunteer-mockup-2.html" class="jump-btn">Open Chat</a></div>
+            <div class="list-item">Chat 395 — 45 min session<br><a href="volunteer-mockup-2.html" class="jump-btn">Open Chat</a></div>
+        </div>
+
+        <div class="card">
+            <h3>Impact Overview</h3>
+            <div class="list-item">Active Mentees: 3</div>
+            <div class="list-item">Teen Helped: 59</div>
+            <div class="list-item">Average Session: 38 mins</div>
+            <div class="list-item">Positive Feedback: 96%</div>
+        </div>
+
+    </main>
+
+</div>
+
+<footer>
+© <span id="year"></span> auxilium — volunteers — Made with care for students, by students.
+</footer>
+
+  <script src="volunteer-mockup-1.js"></script>
+</body>
+</html>

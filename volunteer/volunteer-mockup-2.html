@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>auxilium – Chat 815</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:"Segoe UI",sans-serif}
+body{
+    min-height:100vh;
+    background:linear-gradient(135deg,#ffd6e8,#d6e4ff,#d6fff2);
+    background-size:300% 300%;
+    animation:gradientShift 12s ease infinite;
+    display:flex;
+    flex-direction:column;
+    color:#333;
+}
+@keyframes gradientShift{
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+
+/* Navbar */
+.navbar{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:20px 40px;
+}
+.logo{
+    font-size:22px;
+    font-weight:700;
+    letter-spacing:1px;
+}
+
+/* Chat Layout */
+.chat-container{
+    max-width:900px;
+    margin:auto;
+    padding:40px 20px;
+    flex:1;
+    display:flex;
+    flex-direction:column;
+}
+
+.chat-header-bar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:15px;
+}
+
+.chat-title{
+    font-size:26px;
+    font-weight:600;
+}
+
+.session-timer{
+    background:rgba(0,0,0,0.05);
+    padding:8px 14px;
+    border-radius:20px;
+    font-size:13px;
+    color:rgba(60,60,60,0.8);
+}
+
+        .chat-window {
+            background: rgba(255,255,255,0.85);
+            border-radius: 30px;
+            padding: 30px;
+            height: 420px;
+            overflow-y: auto;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+.chat-message{
+    display:flex;
+}
+
+.chat-message.volunteer{
+    justify-content:flex-end;
+}
+
+.chat-message.student{
+    justify-content:flex-start;
+}
+
+.bubble{
+    max-width:70%;
+    padding:15px 20px;
+    border-radius:20px;
+    font-size:14px;
+    line-height:1.4;
+}
+
+.volunteer .bubble{
+    background:linear-gradient(135deg,#ff8ecf,#8ea8ff);
+    color:white;
+    border-bottom-right-radius:5px;
+}
+
+.student .bubble{
+    background:white;
+    border-bottom-left-radius:5px;
+}
+
+.chat-input-area{
+    display:flex;
+    gap:10px;
+    margin-top:20px;
+}
+
+.chat-input-area textarea{
+    flex:1;
+    padding:15px;
+    border-radius:25px;
+    border:none;
+    resize:none;
+    height:50px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.05);
+}
+
+.chat-input-area button{
+    padding:12px 20px;
+    border:none;
+    border-radius:25px;
+    background:linear-gradient(135deg,#ff8ecf,#8ea8ff);
+    color:white;
+    cursor:pointer;
+}
+
+.chat-actions{
+    display:flex;
+    justify-content:flex-end;
+    margin-top:15px;
+}
+
+.end-chat-btn{
+    display: inline-block;
+    text-decoration: none;
+    padding:10px 18px;
+    border:none;
+    border-radius:25px;
+    background:#ff4d6d;
+    color:white;
+    font-size:13px;
+    cursor:pointer;
+    box-shadow:0 8px 18px rgba(255,77,109,0.25);
+    transition:transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.end-chat-btn:hover{
+    transform:translateY(-2px);
+    box-shadow:0 12px 24px rgba(255,77,109,0.35);
+}
+
+footer{
+    text-align:center;
+    padding:20px;
+    font-size:14px;
+    opacity:0.7;
+}
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="logo">auxilium – volunteers</div>
+</nav>
+
+<main class="chat-container">
+
+    <div class="chat-header-bar">
+        <div class="chat-title">Chat 815</div>
+        <div class="session-timer">Session Time: 00:01:18</div>
+    </div>
+
+    <div class="chat-window">
+
+        <div class="chat-message volunteer">
+            <div class="bubble">
+                Hi 💛 I’m here to listen. What’s been going on?
+            </div>
+        </div>
+
+        <div class="chat-message student">
+            <div class="bubble">
+                I’ve been feeling really overwhelmed with school and everything lately.
+            </div>
+        </div>
+
+        <div class="chat-message volunteer">
+            <div class="bubble">
+                That sounds really heavy. I’m really glad you reached out. What’s been stressing you the most?
+            </div>
+        </div>
+
+        <div class="chat-message student">
+            <div class="bubble">
+                I have exams coming up and I feel like I’m falling behind in two classes.
+            </div>
+        </div>
+
+    </div>
+
+    <div class="chat-input-area">
+        <textarea placeholder="Type your response..."></textarea>
+        <button>Send</button>
+    </div>
+
+    <div class="chat-actions">
+        <a href="volunteer-mockup-1.html" class="end-chat-btn">End Chat</a>
+    </div>
+
+</main>
+
+<footer>
+© <span id="year"></span> auxilium — volunteers — Made with care for students, by students.
+</footer>
+  <script src="volunteer-mockup-1.js"></script>
+</body>
+</html>
