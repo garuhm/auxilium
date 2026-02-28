@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>auxilium</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">auxilium</div>
+        <div class="nav-links">
+            <a href="#">Home</a>
+            <a href="exercises.html">Breathing</a>
+            <a href="affirmations.html">Affirmations</a>
+            <a href="chat-mockup-1.html">Chat</a>
+            <a href="volunteer/volunteer-mockup-1.html">For Volunteers</a>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <h1>Take a Breath.<br>You’re Doing Better Than You Think.</h1>
+        <p>
+            A gentle space made for high school students to pause, reset, and recharge.
+            Small moments of calm can make a big difference.
+        </p>
+    </header>
+
+    <section class="features">
+        <div class="card">
+            <h2>Breathing Exercises</h2>
+            <p>Simple guided breathing tools to help you slow down and refocus in minutes.</p>
+            <p><a href="exercises.html" class="card-link">Go to Breathing →</a></p>
+        </div>
+
+        <div class="card">
+            <h2>Positive Affirmations</h2>
+            <p>Read uplifting words from other students or share encouragement of your own.</p>
+            <p><a href="affirmations.html" class="card-link">Go to Affirmations →</a></p>
+        </div>
+
+        <div class="card">
+          <h2>Chat With a Volunteer</h2>
+          <p>
+              Connect with a supportive volunteer and talk through what’s been
+              weighing on you in a safe, judgment-free space.
+          </p>
+          <p>
+              <a href="chat-mockup-1.html" class="card-link">Go to Chat →</a>
+          </p>
+        </div>
+    </section>
+
+    <button class="hotline-btn" id="openHotlines">
+    🌍 View Worldwide Help Hotlines
+    </button>
+
+    <div class="modal" id="hotlineModal">
+        <div class="modal-content">
+          <h2>Worldwide Help Hotlines</h2>
+
+            <!-- Emergency Notice -->
+            <div class="hotline-emergency">
+                🚨 If you are in immediate danger, please contact local emergency services right away.
+            </div>
+
+
+            <!-- Detected Country Badge -->
+            <div class="detected-country" id="detectedCountry" style="display:none;">
+                📍 Showing resources for: <strong id="detectedCountryName"></strong>
+            </div>
+
+            <!-- Search + Controls -->
+            <div class="search-box">
+                <input 
+                    type="text" 
+                    id="searchInput" 
+                    placeholder="Search by country or hotline name..."
+                    autocomplete="off"
+                >
+                <button id="clearSearch" type="button">Clear</button>
+            </div>
+
+            <!-- Filter Chips -->
+            <div class="hotline-filters">
+                <button class="filter-chip active" data-filter="all">All</button>
+                <button class="filter-chip" data-filter="my">My Country</button>
+                <button class="filter-chip" data-filter="am">A–M</button>
+                <button class="filter-chip" data-filter="nz">N–Z</button>
+            </div>
+
+            <!-- Scrollable Hotline List -->
+            <div class="hotline-list" id="hotlineList"></div>
+
+            <!-- Footer Note -->
+            <div class="hotline-footer-note">
+                These numbers may vary by region. If one does not work, please let us know to update the information, and search for local hotlines in the emantime.
+            </div>
+
+            <button class="close-btn" id="closeHotlines">
+                Close
+            </button>
+
+        </div>
+    </div>
+
+    <!-- Stress Facts Section -->
+    <section class="stress-section">
+        <h2>Why Managing Stress Matters</h2>
+        <div class="stress-grid">
+            <div class="stress-card">
+                <h3>🧠 Mental Health</h3>
+                <p>Chronic stress can increase anxiety, depression, mood swings, and difficulty concentrating.</p>
+            </div>
+
+            <div class="stress-card">
+                <h3>💤 Sleep Problems</h3>
+                <p>High stress levels often disrupt sleep, making it harder to rest and recover properly.</p>
+            </div>
+
+            <div class="stress-card">
+                <h3>❤️ Physical Health</h3>
+                <p>Ongoing stress can contribute to headaches, stomach issues, weakened immunity, and high blood pressure.</p>
+            </div>
+
+            <div class="stress-card">
+                <h3>📚 Academic Impact</h3>
+                <p>Too much stress can affect memory, focus, motivation, and overall academic performance.</p>
+            </div>
+        </div>
+        <p class="stress-reminder">
+            Taking care of your mental and physical health is essential, not a luxury. Even small habits like deep breathing, positive self-talk, and short breaks can make a real difference.
+        </p>
+    </section>
+
+    <footer>
+        © <span id="year"></span> auxilium — Made with care for students, by students.
+    </footer>
+
+    <script src="index.js"></script>
+</body>
+</html> 

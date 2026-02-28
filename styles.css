@@ -1,0 +1,445 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #ffd6e8, #d6e4ff, #d6fff2);
+    background-size: 300% 300%;
+    animation: gradientShift 12s ease infinite;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+}
+
+.logo {
+    font-weight: 700;
+    font-size: 22px;
+}
+
+.nav-links a {
+    margin-left: 25px;
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: opacity 0.3s ease;
+}
+
+.nav-links a:hover {
+    opacity: 0.6;
+}
+
+.hero {
+    text-align: center;
+    padding: 80px 20px 40px;
+    max-width: 800px;
+    margin: auto;
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 35px;
+    color: #555;
+}
+
+button {
+    background: white;
+    border: none;
+    padding: 15px 35px;
+    border-radius: 40px;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+}
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    padding: 60px 40px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.card {
+    background: white;
+    padding: 35px;
+    border-radius: 25px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+}
+
+.card h2 {
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+.card p {
+    font-size: 15px;
+    color: #666;
+}
+
+
+/* Stress Section */
+.stress-section {
+    background: rgba(255, 255, 255, 0.85);
+    margin: 60px 40px;
+    padding: 60px 30px;
+    border-radius: 30px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+    text-align: center;
+}
+
+.stress-section h2 {
+    font-size: 32px;
+    margin-bottom: 40px;
+}
+
+.stress-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+.stress-card {
+    background: white;
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+}
+
+.stress-card h3 {
+    margin-bottom: 10px;
+}
+
+.stress-card p {
+    font-size: 14px;
+    color: #555;
+}
+
+.stress-reminder {
+    max-width: 700px;
+    margin: auto;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+    margin-top: auto;
+    opacity: 0.7;
+}
+
+/* Breathing Page */
+
+.breathing-container {
+    text-align: center;
+    margin: auto;
+    padding: 60px 20px;
+}
+
+.page-title {
+    font-size: 36px;
+    margin-bottom: 40px;
+}
+
+.exercise-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(220px, 1fr));
+    gap: 30px;
+}
+
+.exercise-card {
+    background: white;
+    padding: 30px;
+    border-radius: 25px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.exercise-card:hover {
+    transform: translateY(-8px);
+}
+
+.hidden {
+    display: none;
+}
+
+/* Breathing Animation */
+
+.breathing-circle {
+    width: 200px;
+    height: 200px;
+    margin: 40px auto;
+    border-radius: 50%;
+    background: radial-gradient(circle, #ffffff 0%, #d6e4ff 100%);
+    box-shadow: 0 0 40px rgba(142, 168, 255, 0.6);
+    transition: transform 1s ease-in-out;
+}
+
+.timer {
+    font-size: 48px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.phase-text {
+    font-size: 20px;
+    margin-top: 10px;
+    opacity: 0.8;
+}
+
+#endButtons {
+    margin-top: 30px;
+}
+
+#endButtons button {
+    margin: 0 10px;
+}
+
+/* Affirmations Page */
+
+.affirmations-container {
+    text-align: center;
+    padding: 60px 20px;
+    max-width: 800px;
+    margin: auto;
+}
+
+.card-stack {
+    position: relative;
+    width: 100%;
+    height: 220px;
+    margin: 40px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.affirmation-card {
+    width: 100%;
+    max-width: 500px;
+    background: white;
+    padding: 40px;
+    border-radius: 30px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+    font-size: 20px;
+    cursor: pointer;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+.swipe-out {
+    transform: translateX(-120%) rotate(-10deg);
+    opacity: 0;
+}
+
+textarea {
+    width: 100%;
+    height: 100px;
+    padding: 15px;
+    border-radius: 15px;
+    border: none;
+    resize: none;
+    margin-bottom: 15px;
+    font-size: 14px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+#affirmationFormContainer {
+    margin-top: 30px;
+}
+
+/* Overlay */
+.hotline-btn {
+    display: block;
+    margin: 40px auto 60px;
+    padding: 15px 35px;
+    border: none;
+    border-radius: 40px;
+    background: white;
+    font-size: 16px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    cursor: pointer;
+}
+
+.modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(6px);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    animation: fadeIn 0.3s ease forwards;
+    z-index: 1000;
+}
+
+/* Modal Card */
+
+.modal-content {
+    background: rgba(255, 255, 255, 0.95);
+    width: 100%;
+    max-width: 900px;
+    border-radius: 30px;
+    padding: 35px;
+    max-height: 85vh;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15);
+    transform: scale(0.95);
+    animation: scaleIn 0.3s ease forwards;
+}
+
+/* Header */
+
+.modal-content h2 {
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 26px;
+    font-weight: 700;
+}
+
+/* Search */
+
+.search-box {
+    margin: 20px 0;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 12px 18px;
+    border-radius: 25px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    outline: none;
+    font-size: 14px;
+    transition: box-shadow 0.2s ease, border 0.2s ease;
+}
+
+.search-box input:focus {
+    border: 1px solid #8ea8ff;
+    box-shadow: 0 0 0 4px rgba(142, 168, 255, 0.15);
+}
+
+/* Hotline List */
+
+.hotline-list {
+    overflow-y: auto;
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+    padding-top: 20px;
+    padding-right: 10px;
+    flex: 1;
+}
+
+/* Scrollbar Styling */
+
+.hotline-list::-webkit-scrollbar {
+    width: 8px;
+}
+
+.hotline-list::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+}
+
+.hotline-list::-webkit-scrollbar-thumb {
+    background: rgba(142, 168, 255, 0.6);
+    border-radius: 10px;
+}
+
+/* Country Block */
+
+.hotline-country {
+    margin-bottom: 18px;
+    padding: 12px 14px;
+    border-radius: 14px;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.hotline-country:hover {
+    background: rgba(0, 0, 0, 0.03);
+    transform: translateX(4px);
+}
+
+/* Highlighted Country */
+
+.hotline-country.highlight {
+    background: rgba(142, 168, 255, 0.18);
+    border: 1px solid rgba(142, 168, 255, 0.4);
+}
+
+/* Country Title */
+
+.hotline-country h3 {
+    margin-bottom: 6px;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+/* Close Button */
+
+.close-btn {
+    align-self: center;
+    margin-top: 20px;
+    padding: 12px 28px;
+    border: none;
+    border-radius: 30px;
+    background: linear-gradient(135deg, #ff8ecf, #8ea8ff);
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.close-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(142, 168, 255, 0.3);
+}
+
+/* Animations */
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes scaleIn {
+    from { transform: scale(0.95); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}

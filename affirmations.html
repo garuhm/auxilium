@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>auxilium - Affirmations</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">auxilium</div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="exercises.html">Breathing</a>
+            <a href="#">Affirmations</a>
+            <a href="chat-mockup-1.html">Chat</a>
+            <a href="volunteer/volunteer-mockup-1.html">For Volunteers</a>
+        </div>
+    </nav>
+
+    <main class="affirmations-container">
+        <h1 class="page-title">Positive Affirmations</h1>
+
+        <div class="card-stack" id="cardStack">
+            <div class="affirmation-card" id="affirmationCard"></div>
+        </div>
+
+        <button id="showFormBtn">Add an Affirmation</button>
+
+        <div id="affirmationFormContainer" class="hidden">
+            <form id="affirmationForm">
+                <textarea id="affirmationInput" placeholder="Write something encouraging..."></textarea>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        © <span id="year"></span> auxilium — Made with care for students, by students.
+    </footer>
+
+    <script src="affirmations.js"></script>
+</body>
+</html>

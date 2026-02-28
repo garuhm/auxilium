@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>auxilium - Chating with Alex</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Segoe UI", sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #ffd6e8, #d6e4ff, #d6fff2);
+            background-size: 300% 300%;
+            animation: gradientShift 12s ease infinite;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 22px;
+        }
+
+        .nav-links a {
+            margin-left: 25px;
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: opacity 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            opacity: 0.6;
+        }
+
+        /* Chat Layout */
+        .chat-container {
+            max-width: 900px;
+            margin: auto;
+            padding: 60px 20px;
+            flex: 1;
+        }
+
+        .page-title {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        .chat-subtitle {
+            text-align: center;
+            color: rgba(60,60,60,0.75);
+            margin-bottom: 30px;
+        }
+
+        .chat-window {
+            background: rgba(255,255,255,0.85);
+            border-radius: 30px;
+            padding: 30px;
+            height: 420px;
+            overflow-y: auto;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .chat-header {
+            font-size: 14px;
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+            border-bottom: 1px solid rgba(0,0,0,0.08);
+            color: rgba(60,60,60,0.8);
+        }
+
+        .chat-message {
+            display: flex;
+        }
+
+        .chat-message.student {
+            justify-content: flex-end;
+        }
+
+        .chat-message.volunteer {
+            justify-content: flex-start;
+        }
+
+        .bubble {
+            max-width: 70%;
+            padding: 15px 20px;
+            border-radius: 20px;
+            font-size: 14px;
+            line-height: 1.4;
+        }
+
+        .student .bubble {
+            background: linear-gradient(135deg, #ff8ecf, #8ea8ff);
+            color: white;
+            border-bottom-right-radius: 5px;
+        }
+
+        .volunteer .bubble {
+            background: white;
+            border-bottom-left-radius: 5px;
+        }
+
+        .chat-input-area {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .chat-input-area input {
+            flex: 1;
+            padding: 15px;
+            border-radius: 25px;
+            border: none;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .chat-input-area button {
+            padding: 15px 25px;
+            border-radius: 25px;
+            border: none;
+            background: white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            cursor: not-allowed;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 14px;
+            opacity: 0.7;
+        }
+
+        /* Safety Notice */
+        .safety-notice {
+            background: rgba(255,255,255,0.9);
+            border-left: 6px solid #8ea8ff;
+            padding: 15px 20px;
+            border-radius: 15px;
+            font-size: 13px;
+            margin-bottom: 25px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        /* Typing Indicator */
+        .typing .bubble {
+            background: white;
+            display: flex;
+            gap: 6px;
+            align-items: center;
+        }
+
+        .typing-dot {
+            width: 8px;
+            height: 8px;
+            background: #8ea8ff;
+            border-radius: 50%;
+            animation: bounce 1.2s infinite ease-in-out;
+        }
+
+        .typing-dot:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .typing-dot:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+        @keyframes bounce {
+            0%, 80%, 100% { transform: scale(0.6); opacity: 0.5; }
+            40% { transform: scale(1); opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">auxilium</div>
+        <div class="nav-links">
+           <a href="index.html">Home</a>
+            <a href="exercises.html">Breathing</a>
+            <a href="affirmations.html">Affirmations</a>
+            <a href="#">Chat</a>
+            <a href="volunteer/volunteer-mockup-1.html">For Volunteers</a>
+        </div>
+    </nav>
+
+    <main class="chat-container">
+        
+        <div class="safety-notice">
+            If you are in immediate danger or experiencing a crisis, please call emergency services or a trusted adult right away. This chat is for supportive conversation and is not a substitute for professional help.
+        </div>
+        <h1 class="page-title">Talk to a Volunteer</h1>
+        <p class="chat-subtitle">A safe space to share what’s on your mind.</p>
+
+        <div class="chat-window">
+          <div class="chat-header">
+                You are talking to: <strong>Alex</strong>
+            </div>
+            <div class="chat-message volunteer">
+                <div class="bubble">
+                    Hi 💛 I’m here to listen. What’s been going on?
+                </div>
+            </div>
+
+            <div class="chat-message student">
+                <div class="bubble">
+                    I’ve been feeling really overwhelmed with school and everything lately.
+                </div>
+            </div>
+
+            <div class="chat-message volunteer">
+                <div class="bubble">
+                    That sounds really heavy. I’m really glad you reached out. What’s been stressing you the most?
+                </div>
+            </div>
+
+            <div class="chat-message student">
+                <div class="bubble">
+                    I have exams coming up and I feel like I’m falling behind in two classes.
+                </div>
+            </div>
+        
+            <div class="chat-message volunteer typing">
+                <div class="bubble">
+                    <span class="typing-dot"></span>
+                    <span class="typing-dot"></span>
+                    <span class="typing-dot"></span>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="chat-input-area">
+            <input type="text" placeholder="Type your message..." disabled>
+            <button disabled>Send</button>
+        </div>
+    </main>
+
+    <footer>
+        © 2026 auxilium — Made with care for students, by students.
+    </footer>
+
+</body>
+</html>

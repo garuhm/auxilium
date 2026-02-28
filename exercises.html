@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>auxilium - Breathing Exercises</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">auxilium</div>
+         <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="#">Breathing</a>
+            <a href="affirmations.html">Affirmations</a>
+            <a href="chat-mockup-1.html">Chat</a>
+            <a href="volunteer/volunteer-mockup-1.html">For Volunteers</a>
+        </div>
+    </nav>
+
+    <main class="breathing-container">
+
+        <!-- Selection Catalog -->
+        <section id="exerciseSelection">
+            <h1 class="page-title">Choose a Breathing Exercise</h1>
+
+            <div class="exercise-grid">
+                <div class="exercise-card" data-type="box">
+                    <h2>Box Breathing</h2>
+                    <p>Inhale 4s • Hold 4s • Exhale 4s • Hold 4s</p>
+                </div>
+
+                <div class="exercise-card" data-type="478">
+                    <h2>4-7-8 Breathing</h2>
+                    <p>Inhale 4s • Hold 7s • Exhale 8s</p>
+                </div>
+
+                <div class="exercise-card" data-type="calm">
+                    <h2>Calm Breathing</h2>
+                    <p>Inhale 5s • Exhale 5s</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Exercise Screen -->
+        <section id="exerciseScreen" class="hidden">
+            <h1 id="exerciseName"></h1>
+
+            <div class="breathing-circle" id="breathingCircle"></div>
+
+            <div class="timer" id="timer">0</div>
+            <div class="phase-text" id="phaseText"></div>
+
+            <div id="endButtons" class="hidden">
+                <button id="restartBtn">Restart</button>
+                <button id="backBtn">Back to Exercises</button>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        © <span id="year"></span> auxilium — Made with care for students, by students.
+    </footer>
+
+    <script src="breathing.js"></script>
+</body>
+</html>
